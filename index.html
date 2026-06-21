@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SETIUS RESTAURANT | Online Menu</title>
+    <title>Sethu's Indian Restaurant | Online Menu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -89,8 +89,36 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             backdrop-filter: blur(10px);
+        }
+
+        .hero-logo-style {
+            display: block;
+            margin-bottom: 28px;
+        }
+        .hero-logo-style img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: rgba(255,255,255,0.95);
+            padding: 12px;
+            border: 2px solid rgba(212,175,55,0.3);
+            box-shadow: 0 0 40px rgba(212,175,55,0.15);
+            transition: transform 0.4s ease;
+        }
+        .hero-logo-style img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .hero-title .sub-text {
+            font-size: 0.55em;
+            font-weight: 600;
+            letter-spacing: 6px;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 4px;
         }
 
         .hero-title {
@@ -440,7 +468,7 @@
     <!-- LOADING -->
     <div class="loading-overlay" id="loading">
         <div class="loader-ring"></div>
-        <span>SETIUS</span>
+        <span>SETHU'S</span>
     </div>
 
     <!-- 3D CANVAS -->
@@ -451,14 +479,17 @@
 
         <!-- HERO -->
         <section class="hero">
-            <div class="hero-badge">&#9733; Premium Dining</div>
+            <span class="hero-logo-style">
+                <img src="logo.jpg" alt="Sethu's Indian Restaurant" />
+            </span>
+            <div class="hero-badge">&#9733; Authentic Indian Dining</div>
             <h1 class="hero-title">
-                <span class="gold">SETIUS</span><br />
-                RESTAURANT
+                <span class="gold">SETHU'S</span><br />
+                <span class="sub-text">INDIAN RESTAURANT</span>
             </h1>
             <div class="hero-subtitle">سیٹیس ریسٹورنٹ</div>
             <div class="hero-divider"></div>
-            <p class="hero-tagline">&#8226; Authentic Flavours &#8226; Since 2024 &#8226;</p>
+            <p class="hero-tagline">&#8226; Traditional Flavours &#8226; Since 2024 &#8226;</p>
             <div class="scroll-indicator" onclick="document.querySelector('.category-nav').scrollIntoView({behavior:'smooth'})">
                 <svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
             </div>
@@ -648,7 +679,7 @@
         </div>
 
         <footer class="footer">
-            <span class="brand">SETIUS RESTAURANT</span> &nbsp; &#8226; &nbsp; سیٹیس ریسٹورنٹ &nbsp; &#8226; &nbsp; All Rights Reserved
+            <span class="brand">SETHU'S INDIAN RESTAURANT</span> &nbsp; &#8226; &nbsp; سیٹیس ریسٹورنٹ &nbsp; &#8226; &nbsp; All Rights Reserved
         </footer>
 
     </div>
