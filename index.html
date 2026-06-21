@@ -69,6 +69,38 @@
             text-align: center;
             padding: 40px 20px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            inset: 50% auto auto 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .hero-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero::before {
@@ -77,6 +109,7 @@
             inset: 0;
             background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%);
             pointer-events: none;
+            z-index: 2;
         }
 
         .hero-badge {
@@ -597,20 +630,28 @@
     <div class="main-wrapper">
 
         <!-- HERO -->
-        <section class="hero">
-            <span class="hero-logo-style">
-                <img src="logo.png" alt="Sethu's Indian Restaurant" />
-            </span>
-            <div class="hero-badge">&#9733; Family Restaurant</div>
-            <h1 class="hero-title">
-                <span class="gold">SETHU'S</span><br />
-                <span class="sub-text">INDIAN RESTAURANT</span>
-            </h1>
-            <div class="hero-subtitle">مطعم هندي</div>
-            <div class="hero-divider"></div>
-            <p class="hero-tagline">&#8226; Traditional Flavours &#8226; Since 2024 &#8226;</p>
-            <div class="scroll-indicator" onclick="document.querySelector('.category-nav').scrollIntoView({behavior:'smooth'})">
-                <svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        <section class="hero" id="hero">
+            <div class="hero-video-wrap">
+                <video class="hero-video" autoplay muted loop playsinline poster="logo.png">
+                    <source src="banner.mp4" type="video/mp4" />
+                </video>
+                <div class="hero-video-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <span class="hero-logo-style">
+                    <img src="logo.png" alt="Sethu's Indian Restaurant" />
+                </span>
+                <div class="hero-badge">&#9733; Family Restaurant</div>
+                <h1 class="hero-title">
+                    <span class="gold">SETHU'S</span><br />
+                    <span class="sub-text">INDIAN RESTAURANT</span>
+                </h1>
+                <div class="hero-subtitle">مطعم هندي</div>
+                <div class="hero-divider"></div>
+                <p class="hero-tagline">&#8226; Traditional Flavours &#8226; Since 2024 &#8226;</p>
+                <div class="scroll-indicator" onclick="document.querySelector('.category-nav').scrollIntoView({behavior:'smooth'})">
+                    <svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+                </div>
             </div>
         </section>
 
