@@ -469,6 +469,33 @@
             width: 18px;
             height: 18px;
         }
+        .review-btn {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            gap: 8px;
+            padding: 12px 28px;
+            background: transparent;
+            color: #FBBC04;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            border: 1px solid #FBBC04;
+        }
+        .review-btn:hover {
+            background: #FBBC04;
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251,188,4,0.25);
+        }
+        .review-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
 
         @media (max-width: 700px) {
             .location-card {
@@ -924,6 +951,10 @@
                         </div>
                         <a href="https://maps.app.goo.gl/okhUCevfmanAPdkp7" target="_blank" rel="noopener" class="direction-btn">
                             &#128205; Get Directions &nbsp;&#8599;
+                        </a>
+                        <a href="https://search.google.com/local/writereview?placeid=0x3e49fb0053834a37:0x4435ee5132250bee" target="_blank" rel="noopener" class="review-btn">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            Write a Review
                         </a>
                     </div>
                 </div>
