@@ -673,6 +673,418 @@
             font-size: 1rem;
             letter-spacing: 2px;
         }
+        /* ─── MONTHLY MEAL PLAN ─── */
+        .monthly-plan-section {
+            margin-bottom: 70px;
+            scroll-margin-top: 80px;
+        }
+
+        /* ── Monthly Overview Hero ── */
+        .monthly-overview {
+            background: linear-gradient(145deg, rgba(20,18,14,0.95), rgba(10,10,10,0.98));
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .monthly-overview::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 40%, rgba(212,175,55,0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 60%, rgba(212,175,55,0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .monthly-overview-header {
+            text-align: center;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        .monthly-overview-header .badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.12);
+            border: 1px solid rgba(212,175,55,0.25);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .monthly-overview-header h2 {
+            font-family: var(--font-primary);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            color: var(--cream);
+            line-height: 1.2;
+        }
+        .monthly-overview-header h2 .gold { color: var(--gold); }
+        .monthly-overview-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 10px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .monthly-overview-header .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 16px auto;
+        }
+
+        /* ── Meal Cards (3-column) ── */
+        .meal-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .meal-card {
+            background: rgba(20,18,14,0.8);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 16px;
+            padding: 24px 16px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        .meal-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212,175,55,0.4);
+            box-shadow: 0 12px 40px rgba(212,175,55,0.12);
+        }
+        .meal-card .meal-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .meal-card .meal-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(212,175,55,0.1);
+        }
+        .meal-card h3 {
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .meal-card .meal-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        .meal-card .meal-price {
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-top: 8px;
+        }
+        .meal-card .meal-price .sar-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ── Pricing Banner ── */
+        .pricing-banner {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.05));
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 16px;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .pricing-banner .price-tag {
+            font-family: var(--font-primary);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            color: var(--gold);
+        }
+        .pricing-banner .price-sub {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 2px;
+        }
+        .pricing-banner .features-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .pricing-banner .features-row span {
+            font-size: 0.78rem;
+            color: var(--text);
+            background: rgba(212,175,55,0.08);
+            padding: 6px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(212,175,55,0.12);
+        }
+
+        /* ── CTA Buttons ── */
+        .plan-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        .plan-cta .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .plan-cta .cta-btn.subscribe {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--dark);
+            box-shadow: 0 6px 24px rgba(212,175,55,0.3);
+        }
+        .plan-cta .cta-btn.subscribe:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(212,175,55,0.4);
+        }
+        .plan-cta .cta-btn.whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+        .plan-cta .cta-btn.whatsapp:hover {
+            background: #1DA851;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(37,211,102,0.3);
+        }
+
+        /* ── Weekly Schedule Header ── */
+        .schedule-intro {
+            text-align: center;
+            margin: 48px 0 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .schedule-intro h3 {
+            font-family: var(--font-primary);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--cream);
+            font-weight: 700;
+        }
+        .schedule-intro .sub {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+        .schedule-intro .line {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 14px auto;
+        }
+
+        /* ── Meal Type Tabs ── */
+        .meal-tabs {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .meal-tab {
+            padding: 10px 28px;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 50px;
+            background: transparent;
+            color: var(--text-muted);
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .meal-tab:hover,
+        .meal-tab.active {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        /* ── Schedule Grid ── */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .schedule-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .schedule-item:hover {
+            border-color: rgba(212,175,55,0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.08);
+        }
+        .schedule-item .day {
+            font-family: var(--font-primary);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--gold);
+            min-width: 70px;
+        }
+        .schedule-item .meal-name {
+            font-size: 0.88rem;
+            color: var(--text);
+            text-align: right;
+            flex: 1;
+            padding-left: 12px;
+        }
+
+        /* ── Meal Plan Footer ── */
+        .meal-plan-footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 36px;
+            border-top: 1px solid var(--card-border);
+            position: relative;
+            z-index: 1;
+        }
+        .meal-plan-footer .rest-name {
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .meal-plan-footer .rest-addr {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-top: 6px;
+        }
+        .meal-plan-footer .rest-phone {
+            color: var(--cream);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        .meal-plan-footer .tagline {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .meal-cards {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .meal-card .meal-img {
+                height: 180px;
+            }
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+            .monthly-overview {
+                padding: 28px 16px;
+            }
+            .plan-cta .cta-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .meal-tabs {
+                flex-wrap: wrap;
+            }
+            .pricing-banner .features-row span {
+                font-size: 0.72rem;
+                padding: 4px 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .meal-card .meal-img {
+                height: 150px;
+            }
+            .schedule-item {
+                padding: 12px 14px;
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+            }
+            .schedule-item .day {
+                min-width: auto;
+            }
+            .schedule-item .meal-name {
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+
+        /* ─── PRINT STYLES ─── */
+        @media print {
+            #bg-canvas, .hero-video-wrap, .category-nav, .loading-overlay,
+            .social-section, .footer, .qr-section, #cat-nav {
+                display: none !important;
+            }
+            .main-wrapper { position: static; }
+            .menu-container { padding: 20px; }
+            .monthly-overview { border: 2px solid #D4AF37; break-inside: avoid; }
+            .pricing-banner { border: 2px solid #D4AF37; }
+            .meal-card { border: 1px solid #ccc; }
+            .meal-card .meal-img { display: none; }
+            .schedule-item { border: 1px solid #ddd; }
+            body { background: #fff; color: #000; }
+            .monthly-overview-header h2, .schedule-intro h3,
+            .meal-plan-footer .rest-name { color: #000; }
+            .monthly-overview-header h2 .gold,
+            .pricing-banner .price-tag,
+            .schedule-item .day,
+            .meal-card h3 { color: #B8960A; }
+            .plan-cta .cta-btn.subscribe { background: #B8960A; color: #fff; }
+            .plan-cta .cta-btn.whatsapp { background: #25D366; color: #fff; }
+            .menu-item, .location-card, .meal-card { border: 1px solid #ddd; }
+            .monthly-overview { background: #fafafa; }
+            .pricing-banner { background: #f5f0e0; }
+            .schedule-item { background: #fafafa; }
+            .meal-card p, .schedule-item .meal-name, .monthly-overview-header p,
+            .schedule-intro .sub, .meal-plan-footer .rest-addr,
+            .pricing-banner .price-sub { color: #555; }
+        }
     </style>
 </head>
 <body>
@@ -718,7 +1130,8 @@
         <!-- CATEGORY NAV -->
         <nav class="category-nav" id="cat-nav">
             <div class="category-nav-inner" id="cat-nav-inner">
-                <button class="nav-btn active" data-cat="chicken">Chicken Delights</button>
+                <button class="nav-btn active" data-cat="monthly-plan">&#9733; Monthly Plan</button>
+                <button class="nav-btn" data-cat="chicken">Chicken Delights</button>
                 <button class="nav-btn" data-cat="beef">Beef Delights</button>
                 <button class="nav-btn" data-cat="fish">Fish</button>
                 <button class="nav-btn" data-cat="special">Special</button>
@@ -735,6 +1148,135 @@
 
         <!-- MENU -->
         <div class="menu-container">
+
+            <!-- MONTHLY MEAL PLAN -->
+            <section class="monthly-plan-section category-section" id="monthly-plan">
+
+                <!-- ═══ MONTHLY OVERVIEW ═══ -->
+                <div class="monthly-overview">
+                    <div class="monthly-overview-header">
+                        <span class="badge">&#9733; Monthly Subscription</span>
+                        <h2>Monthly <span class="gold">Meal Plan</span></h2>
+                        <div class="divider"></div>
+                        <p>Enjoy Fresh Daily Meals Delivered To Your Doorstep</p>
+                    </div>
+
+                    <!-- 3 Meal Cards -->
+                    <div class="meal-cards">
+                        <div class="meal-card">
+                            <span class="meal-icon">&#127860;</span>
+                            <img class="meal-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=200&fit=crop&q=80" alt="Breakfast" loading="lazy" />
+                            <h3>Breakfast</h3>
+                            <p class="meal-desc">Daily Fresh Breakfast</p>
+                            <p class="meal-price">&#9733; <span class="sar-label">Monthly Plan</span></p>
+                        </div>
+                        <div class="meal-card">
+                            <span class="meal-icon">&#127858;</span>
+                            <img class="meal-img" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=200&fit=crop&q=80" alt="Lunch" loading="lazy" />
+                            <h3>Lunch</h3>
+                            <p class="meal-desc">Daily Lunch Special</p>
+                            <p class="meal-price">&#9733; <span class="sar-label">Monthly Plan</span></p>
+                        </div>
+                        <div class="meal-card">
+                            <span class="meal-icon">&#127835;</span>
+                            <img class="meal-img" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=200&fit=crop&q=80" alt="Dinner" loading="lazy" />
+                            <h3>Dinner</h3>
+                            <p class="meal-desc">Daily Dinner Delight</p>
+                            <p class="meal-price">&#9733; <span class="sar-label">Monthly Plan</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Banner -->
+                    <div class="pricing-banner">
+                        <div class="price-tag">550 <span style="font-size:0.5em;font-weight:400;color:var(--text-muted);">SAR</span> <span style="font-size:0.4em;font-weight:400;color:var(--text-muted);">/ Month</span></div>
+                        <span class="price-sub">&#8226; All Three Meals Included &#8226; 1 Month Duration &#8226;</span>
+                        <div class="features-row">
+                            <span>&#10003; Daily Breakfast</span>
+                            <span>&#10003; Daily Lunch</span>
+                            <span>&#10003; Daily Dinner</span>
+                            <span>&#10003; Free Delivery</span>
+                            <span>&#10003; Freshly Prepared</span>
+                            <span>&#10003; Authentic Indian &amp; Kerala Cuisine</span>
+                            <span>&#10003; Monthly Subscription</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="plan-cta">
+                        <a href="tel:0138928376" class="cta-btn subscribe">&#128222; Subscribe Now For Monthly Meals</a>
+                        <a href="https://wa.me/966138928376?text=Salaam!%20I%20want%20to%20subscribe%20for%20the%20Monthly%20Meal%20Plan%20(550%20SAR%2FMonth)" target="_blank" rel="noopener" class="cta-btn whatsapp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.522 3.67 1.422 5.207L2.145 19.2a.5.5 0 00.61.63l4.304-1.3A9.93 9.93 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ═══ WEEKLY MEAL SCHEDULE ═══ -->
+                <div class="schedule-intro">
+                    <div class="badge" style="display:inline-block;background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.25);padding:6px 20px;border-radius:50px;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">&#128197; Weekly Menu</div>
+                    <h3>Weekly Meal <span class="gold">Schedule</span></h3>
+                    <div class="line"></div>
+                    <p class="sub">Our rotating weekly menu plan &mdash; fresh meals every day</p>
+                </div>
+
+                <!-- Meal Tabs -->
+                <div class="meal-tabs">
+                    <button class="meal-tab active" onclick="showMeal('breakfast')">&#127860; Breakfast</button>
+                    <button class="meal-tab" onclick="showMeal('lunch')">&#127858; Lunch</button>
+                    <button class="meal-tab" onclick="showMeal('dinner')">&#127835; Dinner</button>
+                </div>
+
+                <!-- BREAKFAST Schedule -->
+                <div class="schedule-grid" id="schedule-breakfast">
+                    <div class="schedule-item"><span class="day">Friday</span><span class="meal-name">Appam Veg Kuruma</span></div>
+                    <div class="schedule-item"><span class="day">Saturday</span><span class="meal-name">Idli Set</span></div>
+                    <div class="schedule-item"><span class="day">Sunday</span><span class="meal-name">Idiyappam &amp; Green Peas Set</span></div>
+                    <div class="schedule-item"><span class="day">Monday</span><span class="meal-name">Dosa Set</span></div>
+                    <div class="schedule-item"><span class="day">Tuesday</span><span class="meal-name">Poori Bhaji Set</span></div>
+                    <div class="schedule-item"><span class="day">Wednesday</span><span class="meal-name">Porotta Kadala</span></div>
+                    <div class="schedule-item"><span class="day">Thursday</span><span class="meal-name">Atta Dosa Special</span></div>
+                </div>
+
+                <!-- LUNCH Schedule -->
+                <div class="schedule-grid" id="schedule-lunch" style="display:none;">
+                    <div class="schedule-item"><span class="day">Friday</span><span class="meal-name">Chicken Biryani</span></div>
+                    <div class="schedule-item"><span class="day">Saturday</span><span class="meal-name">Rice &amp; Fish Fry</span></div>
+                    <div class="schedule-item"><span class="day">Sunday</span><span class="meal-name">Chicken Biryani</span></div>
+                    <div class="schedule-item"><span class="day">Monday</span><span class="meal-name">Rice &amp; Fish Fry</span></div>
+                    <div class="schedule-item"><span class="day">Tuesday</span><span class="meal-name">Rice with Omelette</span></div>
+                    <div class="schedule-item"><span class="day">Wednesday</span><span class="meal-name">Rice with Chicken Fry</span></div>
+                    <div class="schedule-item"><span class="day">Thursday</span><span class="meal-name">Ravuthar Biryani</span></div>
+                </div>
+
+                <!-- DINNER Schedule -->
+                <div class="schedule-grid" id="schedule-dinner" style="display:none;">
+                    <div class="schedule-item"><span class="day">Friday</span><span class="meal-name">Thattu Dosa with Veg Kuruma</span></div>
+                    <div class="schedule-item"><span class="day">Saturday</span><span class="meal-name">Chapathi with Chicken Masala</span></div>
+                    <div class="schedule-item"><span class="day">Sunday</span><span class="meal-name">Idiyappam with Beef Masala</span></div>
+                    <div class="schedule-item"><span class="day">Monday</span><span class="meal-name">Porotta with Chicken 65</span></div>
+                    <div class="schedule-item"><span class="day">Tuesday</span><span class="meal-name">Appam with Egg Curry</span></div>
+                    <div class="schedule-item"><span class="day">Wednesday</span><span class="meal-name">Ghee Rice with Chicken Fry</span></div>
+                    <div class="schedule-item"><span class="day">Thursday</span><span class="meal-name">Porotta with Fish Curry</span></div>
+                </div>
+
+                <!-- CTA Buttons (bottom) -->
+                <div class="plan-cta" style="margin-top:28px;">
+                    <a href="tel:0138928376" class="cta-btn subscribe">&#128222; Subscribe Now For Monthly Meals</a>
+                    <a href="https://wa.me/966138928376?text=Salaam!%20I%20want%20to%20subscribe%20for%20the%20Monthly%20Meal%20Plan%20(550%20SAR%2FMonth)" target="_blank" rel="noopener" class="cta-btn whatsapp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.522 3.67 1.422 5.207L2.145 19.2a.5.5 0 00.61.63l4.304-1.3A9.93 9.93 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+                        Order via WhatsApp
+                    </a>
+                </div>
+
+                <!-- Footer Section -->
+                <div class="meal-plan-footer">
+                    <div class="rest-name">Sethüs Modern Indian Kitchen</div>
+                    <div class="rest-addr">Near Al Mana Hospital, Abdullah Fahad</div>
+                    <div class="rest-phone">&#128222; 013 892 8376</div>
+                    <div class="tagline">&#8220;Taste The Magic Of India's Culinary Delights&#8221;</div>
+                </div>
+
+            </section>
 
             <!-- CHICKEN DELIGHTS -->
             <section class="category-section" id="chicken">
@@ -1138,7 +1680,17 @@
     })();
 
     /* ═══════════════════════════════════════════
-       2) QR CODE
+       2) MEAL PLAN TAB SWITCHING
+       ═══════════════════════════════════════════ */
+    function showMeal(type) {
+        document.querySelectorAll('.schedule-grid').forEach(g => g.style.display = 'none');
+        document.querySelectorAll('.meal-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('schedule-' + type).style.display = 'grid';
+        document.querySelector(`.meal-tab[onclick*="'${type}'"]`).classList.add('active');
+    }
+
+    /* ═══════════════════════════════════════════
+       3) QR CODE
        ═══════════════════════════════════════════ */
     (function initQR() {
         const url = window.location.href;
@@ -1170,7 +1722,7 @@
     })();
 
     /* ═══════════════════════════════════════════
-       3) STICKY NAV - ACTIVE SECTION HIGHLIGHT
+       4) STICKY NAV - ACTIVE SECTION HIGHLIGHT
        ═══════════════════════════════════════════ */
     (function initNav() {
         const navBtns = document.querySelectorAll('.nav-btn');
@@ -1201,7 +1753,7 @@
     })();
 
     /* ═══════════════════════════════════════════
-       4) HIDE LOADING
+       5) HIDE LOADING
        ═══════════════════════════════════════════ */
     window.addEventListener('load', () => {
         setTimeout(() => {
